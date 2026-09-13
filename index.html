@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad Pedagógica CP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800">
+    <!-- Encabezado y Navegación -->
+    <header class="bg-indigo-700 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold">Comunidad Pedagógica CP</h1>
+            <nav class="space-x-4 text-sm font-medium">
+                <button onclick="showTab('expedientes')" class="hover:underline">Expedientes</button>
+                <button onclick="showTab('sesiones')" class="hover:underline">Seguimiento</button>
+                <button onclick="showTab('herramientas')" class="hover:underline">Préstamos</button>
+                <button onclick="showTab('padres')" class="hover:underline">Portal Padres</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Módulo Expedientes -->
+        <section id="expedientes" class="tab-content bg-white p-6 rounded-lg shadow-sm">
+            <h2 class="text-2xl font-bold mb-2 text-indigo-900">Gestión de Expedientes Infantiles</h2>
+            <p class="text-slate-600 mb-4">Registro y consulta de la evolución del desarrollo cognitivo.</p>
+            <div class="border-dashed border-2 border-slate-200 p-8 text-center text-slate-400 rounded-lg">
+                + Crear nuevo expediente infantil
+            </div>
+        </section>
+
+        <!-- Módulo Seguimiento -->
+        <section id="sesiones" class="tab-content bg-white p-6 rounded-lg shadow-sm hidden">
+            <h2 class="text-2xl font-bold mb-2 text-indigo-900">Seguimiento de Sesiones</h2>
+            <p class="text-slate-600 mb-4">Bitácora de observaciones pedagógicas y avances.</p>
+            <div class="bg-slate-50 p-4 rounded border border-slate-200">
+                <p class="font-semibold text-sm">Registro de sesión previa</p>
+                <p class="text-xs text-slate-500">Evaluación de motricidad y atención sostenida.</p>
+            </div>
+        </section>
+
+        <!-- Módulo Herramientas -->
+        <section id="herramientas" class="tab-content bg-white p-6 rounded-lg shadow-sm hidden">
+            <h2 class="text-2xl font-bold mb-2 text-indigo-900">Préstamo de Herramientas entre Docentes</h2>
+            <p class="text-slate-600 mb-4">Red colaborativa de intercambio de recursos didácticos.</p>
+            <ul class="divide-y divide-slate-100">
+                <li class="py-2 flex justify-between items-center">
+                    <span>Kit de Integración Sensorial</span>
+                    <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Disponible</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Módulo Padres -->
+        <section id="padres" class="tab-content bg-white p-6 rounded-lg shadow-sm hidden">
+            <h2 class="text-2xl font-bold mb-2 text-indigo-900">Portal para Padres de Familia</h2>
+            <p class="text-slate-600">Visualización de reportes compartidos y recomendaciones pedagógicas.</p>
+        </section>
+    </main>
+
+    <script>
+        function showTab(id) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
